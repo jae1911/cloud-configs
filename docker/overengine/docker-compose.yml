@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  overengine:
+    image: docker.tedomum.net/jae/overengine:beep
+    environment:
+      CONTENT_DIR: ${CONTENT_DIR}
+      CONTENT_ROOT_DIR: ${CONTENT_ROOT_DIR}
+      DOMAINS_ADVERTISED: ${DOMAINS_ADVERTISED}
+      MATRIX_SUBDOMAIN: ${MATRIX_SUBDOMAIN}
+      NODE_ENV: production
+      MATRIX_ENABLED: true
+      BLOGS_ENABLED: true
+      REDIRECTS_ENABLED: true
+      API_ENABLED: true
+    volumes:
+      - ./content:/content
